@@ -1,18 +1,26 @@
 {
   "name": "osm-routing-simulation",
   "version": "1.0.0",
-  "description": "OpenStreetMap routing simulation with different pathfinding algorithms",
-  "main": "index.js",
+  "description": "A simulation tool for routing algorithms using OpenStreetMap data",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node src/index.js",
+    "build": "echo \"No build step required\"",
+    "test": "echo \"No tests specified yet\" && exit 0"
   },
+  "keywords": [
+    "osm",
+    "routing",
+    "algorithms",
+    "simulation",
+    "visualization"
+  ],
+  "author": "Christoph Gerling",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.18.3",
-    "pug": "^3.0.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "jsonstream-next": "^3.0.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^2.0.15"
   }
 }
