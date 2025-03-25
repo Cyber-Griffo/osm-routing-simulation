@@ -45,3 +45,6 @@ cache/
 
 # Project specific
 config.local.js
+
+# GitHub specific
+.github/.DS_Store
