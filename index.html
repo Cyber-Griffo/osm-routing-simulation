@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSM Routing Simulation</title>
+    <link rel="stylesheet" href="public/styles.css">
+    <script src="src/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>OSM Routing Simulation</h1>
+    </header>
+    
+    <main>
+        <div id="map-container"></div>
+        
+        <div class="controls">
+            <h2>Algorithm Controls</h2>
+            <select id="algorithm-select">
+                <option value="bfs">Breadth-First Search</option>
+                <option value="dijkstra">Dijkstra's Algorithm</option>
+                <option value="astar">A* Algorithm</option>
+            </select>
+            
+            <div class="button-group">
+                <button id="run-btn">Run Simulation</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+            
+            <div class="stats">
+                <p>Nodes visited: <span id="nodes-visited">0</span></p>
+                <p>Path length: <span id="path-length">0</span></p>
+                <p>Time: <span id="execution-time">0</span> ms</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Created by Christoph Gerling</p>
+    </footer>
+</body>
+</html>

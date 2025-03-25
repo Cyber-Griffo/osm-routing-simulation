@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "build": "echo \"No build step required\"",
+    "dev": "nodemon src/index.js",
+    "build": "mkdir -p dist && cp -r public index.html src dist/",
     "test": "echo \"No tests specified yet\" && exit 0"
   },
   "keywords": [
@@ -22,5 +23,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "homepage": "https://christophgerling.github.io/osm-routing-simulation"
 }
