@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Check if the input file is provided as an argument
+if [ -z "$1" ]; then
+  echo "Usage: $0 <input_file>"
+  exit 1
+fi
+
+# Get the input file name without the extension
+input_file="$1"
+output_file="${input_file%.*}.json"
+
+# Make the API call and save the output
+curl -s -X POST -H "Content-Type: text/plain" --data-binary @"$input_file" "https://overpass-api.de/api/interpreter" -o "$output_file"
+
+# Notify the user
+if [ $? -eq 0 ]; then
+  echo "Query completed. Output saved to $output_file"
+else
+  echo "Error occurred during the query."
+fi

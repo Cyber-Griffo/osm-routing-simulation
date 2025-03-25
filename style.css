@@ -1,0 +1,271 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.page-header {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2em;
+}
+
+.page-header p {
+    margin: 10px 0 0;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.controls-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    flex-shrink: 0;
+}
+
+.section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* Target only buttons within the controls-container */
+.controls-container button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.controls-container button:hover {
+    background-color: #f0f0f0;
+}
+
+.controls-container button:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Active button state */
+.controls-container button.active {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #45a049;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.controls-container button.active:hover {
+    background-color: #45a049;
+}
+
+.controls-container button.active:disabled {
+    background-color: #8aca8c;
+    color: #eee;
+    border-color: #8aca8c;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.node-selection-container {
+    margin-top: 10px;
+}
+
+.map {
+    flex: 1;
+    min-height: 480px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for the OpenLayers map container */
+.map > div {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Reset any OpenLayers default styles that might be affected */
+.map button {
+    all: revert;
+}
+
+/* Add these new styles for better fullscreen layout */
+body {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.runtime-container {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.runtime-container p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.runtime-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0 15px 0;
+}
+
+.runtime-value.success {
+    color: #00C851;
+}
+
+.runtime-value.error {
+    color: #ff4444;
+}
+
+.notification {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: top 0.5s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.notification.error {
+    background-color: #ff4444;
+}
+
+.notification.warning {
+    background-color: #ffbb33;
+}
+
+.notification.success {
+    background-color: #00C851;
+}
+
+.notification.show {
+    top: 20px;
+}
+
+.file-upload-container {
+    margin-bottom: 15px;
+}
+
+.file-upload-container input[type="file"] {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.simulation-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.speed-control {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.speed-control input[type="range"] {
+    width: 100%;
+}
+
+#speedValue {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.algorithm-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1em;
+}
+
+.algorithm-select:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.algorithm-select optgroup {
+    font-weight: bold;
+}
+
+.algorithm-select option {
+    padding: 4px;
+}

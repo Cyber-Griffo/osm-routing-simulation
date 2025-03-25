@@ -1,0 +1,85 @@
+doctype html
+html
+    head
+        script(src="/lib/ol/ol.js")
+        script(src="/lib/geo.js")
+        script(src="project.js", type="module")
+        link(rel="stylesheet", href="style.css")
+        title Optimiertes Routen auf Echtdaten
+    body
+        div#notification.notification
+        div.page-header
+            h1 Route Optimization Demo
+            p Compare different pathfinding algorithms on real map data
+        
+        div#div_map.map
+        
+        div.controls-container
+            div.section
+                h3 Results
+                div.runtime-container
+                    p Last Algorithm:
+                    div#algorithmDisplay.runtime-value -
+                    p Last Algorithm Runtime:
+                    div#runtimeDisplay.runtime-value - ms
+                    p Path Length:
+                    div#pathLengthDisplay.runtime-value - m
+                    p Nodes in Path:
+                    div#totalNodesCount.runtime-value -
+
+            div.section
+                h3 Start/End Points
+                button#setStartPoint Set Start Point
+                button#setEndPoint Set End Point
+                button#setRandomPoints Set Random Points
+                button#reset Reset
+            
+            div.section
+                h3 Basic Routing
+                button#breadth Breadth-First Search
+                button#dijkstra Dijkstra
+                button#aStar A* Algorithm
+
+            div.section
+                h3 Optimized Routing
+                button#optimizedBreadth Optimized Breadth-First Search
+                button#optimizedDijkstra Optimized Dijkstra
+                button#optimizedAStar Optimized A* Algorithm
+            
+            div.section
+                h3 Map Options
+                div.file-upload-container
+                    input#mapFileInput(type="file", accept=".json")
+                    button#loadMapFile Load Custom Map
+                div.node-selection-container
+                    button#selectNodeToShowNextCrossings Select Node to show possible routing nodes
+                div.checkbox-container
+                    input#toggleContractedGraph(type="checkbox")
+                    label(for="toggleContractedGraph") Show Contracted Graph
+                div.checkbox-container
+                    input#toggleNodesOfPath(type="checkbox")
+                    label(for="toggleNodesOfPath") Show Nodes of Path
+                div.checkbox-container
+                    input#toggleOnlyPath(type="checkbox")
+                    label(for="toggleOnlyPath") Show Only Interactions Layer
+
+            div.section
+                h3 Simulation Controls
+                div.simulation-controls
+                    select#algorithmSelect.algorithm-select
+                        option(value="") Select Algorithm
+                        optgroup(label="Basic Algorithms")
+                            option(value="breadth") Breadth-First Search
+                            option(value="dijkstra") Dijkstra
+                            option(value="a_star") A* Algorithm
+                        optgroup(label="Optimized Algorithms")
+                            option(value="optimizedBreadth") Optimized Breadth-First Search
+                            option(value="optimizedDijkstra") Optimized Dijkstra
+                            option(value="optimizedA_Star") Optimized A* Algorithm
+                    button#startSimulation(disabled) Start Simulation
+                    button#pauseSimulation(disabled) Pause
+                    button#stopSimulation(disabled) Stop
+                    div.speed-control
+                        label(for="simulationSpeed") Speed:
+                        input#simulationSpeed(type="range", min="0", max="1000", value="100")
+                        span#speedValue -
