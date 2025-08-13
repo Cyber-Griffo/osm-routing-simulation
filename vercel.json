@@ -17,9 +17,12 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "server.js"
-    }
+    { "src": "/project.js", "dest": "/project.js" },
+    { "src": "/style.css", "dest": "/style.css" },
+    { "src": "/osm-routing.png", "dest": "/osm-routing.png" },
+    { "src": "/documentation.pdf", "dest": "/documentation.pdf" },
+    { "src": "/lib/(.*)", "dest": "/lib/$1" },
+    { "src": "/data/(.*)", "dest": "/data/$1" },
+    { "src": "/(.*)", "dest": "server.js" }
   ]
 }
