@@ -12,7 +12,8 @@
           "osm-routing.png",
           "documentation.pdf",
           "lib/**",
-          "data/**"
+          "data/**",
+          "modules/**"
         ]
       }
     }
