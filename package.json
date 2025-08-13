@@ -4,7 +4,7 @@
   "description": "OpenStreetMap routing simulation with different pathfinding algorithms",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
