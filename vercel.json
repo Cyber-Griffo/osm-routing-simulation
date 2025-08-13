@@ -3,7 +3,17 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "project.pug",
+          "style.css",
+          "osm-routing.png",
+          "documentation.pdf",
+          "lib/**",
+          "data/**"
+        ]
+      }
     }
   ],
   "routes": [
