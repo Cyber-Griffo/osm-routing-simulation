@@ -3,11 +3,15 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname));
+// Use process.cwd() to get the project root directory
+const projectRoot = process.cwd();
 
-// Serve static files
-app.use(express.static(__dirname));
+app.set('view engine', 'pug');
+// Set views directory relative to project root
+app.set('views', path.join(projectRoot));
+
+// Serve static files from the project root
+app.use(express.static(projectRoot));
 app.use('/lib', express.static(path.join(__dirname, 'lib')));
 
 // Render the main page
