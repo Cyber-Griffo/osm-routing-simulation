@@ -4,10 +4,11 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname));
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files
+app.use(express.static(__dirname));
+app.use('/lib', express.static(path.join(__dirname, 'lib')));
 
 // Render the main page
 app.get('/', (req, res) => {
